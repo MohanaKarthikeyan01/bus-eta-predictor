@@ -54,8 +54,8 @@ traffic_val = traffic_map[traffic]
 if st.button("Predict ETA"):
     try:
         input_data = np.array([[distance, speed, traffic_val, stop_count]])
-        scaled_data = scaler.transform(input_data)
-        prediction = model.predict(scaled_data)
+        prediction = model.predict(input_data)
+
         st.success(f"🕒 Estimated Time of Arrival: **{prediction[0]:.2f} minutes**")
     except Exception as e:
         st.error(f"❌ Prediction error: {e}")
