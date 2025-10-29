@@ -17,9 +17,9 @@ st.markdown("Predict the **Estimated Time of Arrival (ETA)** of a bus using a tr
 # ===============================
 @st.cache_resource
 def load_model():
-    model = joblib.load("final_random_forest_model_small.pkl")
+   model = joblib.load("final_random_forest_model.joblib")
+scaler = joblib.load("scaler.joblib")
 
-    scaler = joblib.load("scaler.pkl")
     return model, scaler
 
 try:
